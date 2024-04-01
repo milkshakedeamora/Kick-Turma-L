@@ -1,0 +1,7 @@
+:root{
+    --cor-nav-bar: linear-gradient(90deg, rgba(250,245,245,1) 1%, rgba(0,47,250,1) 100%);
+    --cor-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(59,89,152,1) 100%);
+    --cor-texto: black;
+    --cor-titulo: #3B5998; 
+   
+   }
