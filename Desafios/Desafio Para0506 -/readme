@@ -1,4 +1,15 @@
-#Pagina Google 
-A pagina desenvolvida do clone de busca está na pasta [AtividadeEmSalaDeAula](./AtividadeEmSalaDeAula/index.html)
-#Paginas com 1 imagem, 2 p e 1 h com navegação entre elas e a pagina clone do google
-As paginas [Google](./Desafio/google.html), [Facebook](./Desafio/facebook.html),[Instagram](./Desafio/instagram.html),[X](./Desafio/x.html) possuem  navegação entre elas e também a pagina clone do google por meio do "Pesquisar no Google"
+
+## Página Google Clone
+
+A página desenvolvida do clone de busca do google durante a aula está na pasta: **[AtividadeEmSalaDeAula](./AtividadeEmSalaDeAula/index.html)**
+
+## Páginas com navegação
+
+As páginas:
+
+* **[Google](./Desafio/google.html)**
+* **[Facebook](./Desafio/facebook.html)**
+* **[Instagram](./Desafio/instagram.html)**
+* **[X](./Desafio/x.html)**
+
+possuem 1 img, 2 p e 1 h e navegação entre elas e também com a página clone do Google por meio do botão "Pesquisar no Google". Para navegar entre as páginas, clique nos links na parte superior da tela. Você também pode usar o botão "Pesquisar no Google" para retornar à página clone do Google.
