@@ -3,4 +3,4 @@
  Garamond e Lato
 
 # Paleta de Cores
-![Paleta de Cores: Azul Marinho, Verde Menta, Cinza Claro, Laranja, Preto, Branco ](./paleta.jpeg)
+![Paleta de Cores: Azul Marinho, Verde Menta, Cinza Claro, Laranja, Preto, Branco](./paleta.jpeg)
