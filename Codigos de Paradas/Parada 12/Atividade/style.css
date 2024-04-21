@@ -1,0 +1,33 @@
+body{
+    max-width: 900px;
+    margin: auto;
+}
+header, footer, main,article,nav{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 10px;
+}
+article{
+    width: 250px;
+    height: 200px;   
+    background-color: #DAF7A6;
+    
+}
+nav{
+    background-color: #C1A1DF;
+    height: 50px;
+}
+
+header{
+    background-color: #88ECE4;
+    height: 150px;
+}
+footer{
+    background-color: #E8758A;
+    height: 100px;
+}
+h1{
+    text-align: center;
+    color: grey;
+}
