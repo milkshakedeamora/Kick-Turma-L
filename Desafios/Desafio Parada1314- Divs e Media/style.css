@@ -273,9 +273,9 @@ h3:hover {
 
 }
 
-@media screen and (max-height: 200px), (max-width: 200px){
+@media screen and (max-height: 238px), (max-width: 238px){
     * {
-        font-size: 3px;
+        font-size:10px;
         margin: 0;
         gap: 0;
         padding: 0;
@@ -292,8 +292,8 @@ h3:hover {
     
 
     button {
-        height: 30px;
-        width: 30px;
+        height: 60px;
+        width: 60px;
         padding: 0;
         gap: 0;
         background-color: brown;
