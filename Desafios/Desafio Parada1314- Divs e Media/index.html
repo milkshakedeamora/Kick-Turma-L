@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Heroes</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales/marvel-dc-demuestra-cuando-sabes-resolviendo-estas-trivias-comics-mcu-ucm-dceu-nndd-ecvisual-ecpm/img/heroes-ok.png"
+                alt="">
+
+        </div>
+        <div class="header">
+            Heroes
+
+        </div>
+
+    </header>
+    <main>
+        <div id="main-content">
+            <h1 class="primary-text">Herois dão suas vidas para proteger nosso planeta.</h1>
+            <h2 class="second-text">ESCOLHA SEU LADO AGORA!</h2>
+            <div class="btns">
+                <button class="btn" onclick="mostrarConteudoDC()"> <p>DC</p></button>
+                <button class="btn" onclick="mostrarConteudoMarvel()"><P>MARVEL</P></button>
+
+
+            </div>
+        </div>
+
+        <div id="dc">
+            <div class="heroi dc-heroi">
+                <h3> Batman</h3>
+            </div>
+            <div class="heroi dc-heroi">
+                <h3>Lanterna Verde</h3>
+            </div>
+            <div class="heroi dc-heroi">
+                <h3>Superman</h3>
+            </div>
+        </div>
+
+        <div id="marvel">
+            <div class="heroi marvel-heroi">
+                <h3> Capitão America </h3>
+            </div>
+            <div class="heroi marvel-heroi">
+                <h3>Thor</h3>
+            </div>
+            <div class="heroi marvel-heroi">
+                <h3>Hulk</h3>
+            </div>
+        </div>
+
+
+    </main>
+
+    
+
+    <footer>
+        <div class="logo">
+            <img src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales/marvel-dc-demuestra-cuando-sabes-resolviendo-estas-trivias-comics-mcu-ucm-dceu-nndd-ecvisual-ecpm/img/heroes-ok.png"
+                alt="">
+
+        </div>
+        <div class="footer">
+            <p>&copy; Copyright 2024, Heroes</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        function mostrarConteudoDC() {
+            document.getElementById('dc').style.display = 'flex';
+            document.getElementById('main-content').style.display = 'none';
+        }
+        function mostrarConteudoMarvel() {
+            document.getElementById('marvel').style.display = 'flex';
+            document.getElementById('main-content').style.display = 'none';
+        }
+        </script>
+</body>
+
+</html>
