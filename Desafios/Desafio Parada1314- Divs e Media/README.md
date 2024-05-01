@@ -3,8 +3,12 @@
 
 Criação de página de imagens de heróis utilizando html+css+javascript. 
 Com duas sections com imagens de herois de animação:
+
+<div align="center">
+  
 ![DC Section](./section-dc.png)
 ![Marvel Section](./section-marvel.png)
+</div>
 
 
 ## Estrutura HTML (Header, Main, Sections, Divs e Footer)
@@ -18,7 +22,11 @@ No codigo CSS há 6 _@media_, 3 definidos pela largura:  tela com largura até 4
 
 ### Header e Footer
 Em tamanhos de tela menores que 238px o header e footer não é exibido, afim de preservar apenas o contéudo principal com total visibilidade. Nos tamanhos acima seu tamanho é ajustado. 
+
+<div align="center">
+  
 ![Tela menor de 238px](./tela-menores.png)
+</div>
 
 ### Section 
 O _@media_ não altera o comportamento das **&lt;section&gt;**'s, que é sempre sendo exibido seu contéudo na pagina inteira. 
