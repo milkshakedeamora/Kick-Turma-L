@@ -10,8 +10,33 @@ Desenvolvimento de uma página para o desafio da Kick. Página inspirada em One 
 ## Paleta de Cores
 
 
-### Header
+### Desktop
 ![Paleta Desktop](./Paleta%20de%20Cores-%20Desktop.jpeg)
+#### Acessibilidade 
+##### Proporção de Contraste :x:
+* Header e Footer : 2,03 : 1 :x:
+* Main : 7,55 : 1 /  10,98 : 1 :white_check_mark:
+##### Daltonismo  :white_check_mark:
+![Desktop](./daltonismo%20-%20desktop.png)
+
+### Celular
+![Paleta Celular](./Paleta%20de%20Cores-%20Celular.jpeg)
+#### Acessibilidade 
+##### Proporção de Contraste :x:
+* Header e Footer : 1,98 : 1 :x:
+* Main : 1,65 : 1 :x:
+##### Daltonismo :white_check_mark:
+![Celular](./daltonismo%20-%20celular.png)
+
+### Tablet
+![Paleta Tablet](./Paleta%20de%20Cores-%20Tablet.jpeg)
+#### Acessibilidade 
+##### Proporção de Contraste :x:
+* Header e Footer : 4,5 : 1 :white_check_mark:
+* Main : 3,15 : 1 :x:
+##### Daltonismo :white_check_mark:
+![Tablet](./daltonismo%20-%20tablet.png)
+
 ## Telas X Seções
 ### Desktop (Seção: Temporadas)
 Desktop (largura maior de 1400px e altura maior de 1000px)
@@ -60,7 +85,10 @@ Desktop (largura menores de 500px)
 
 ![Versão Celular, Seção Temporadas](./tripulacao%20-%20celular.png)
 
+### Celular (Seção: Temporadas)
+Tablet
 
+![Versão Tablet, Seção Inicio](./inicio%20-%20tablet.png)
 
 
 ## Créditos
