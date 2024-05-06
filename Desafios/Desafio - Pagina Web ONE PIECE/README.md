@@ -1,7 +1,6 @@
 
 # One Piece
-
-Desenvolvimento de uma página para o desafio da Kick. Página inspirada em One Piece, com algumas informações sobre as temporadas e os personagens principais. 
+Página inspirada em One Piece, com algumas informações sobre as temporadas e os personagens principais. 
  ## Fontes 
 * Header : One Piece
 * Main (paragrafo): Singly Linked
@@ -39,7 +38,8 @@ Desenvolvimento de uma página para o desafio da Kick. Página inspirada em One 
 
 ## Telas X Seções
 ### Desktop (Seção: Temporadas)
-Desktop (largura maior de 1400px e altura maior de 1000px)
+* Altura maiores de:
+* Largura maiores de:
 
 ![Versão Desktop, Seção Temporadas](./temporada%20-%20desktop.png)
 
@@ -81,12 +81,40 @@ Apresentar o nickname do github com link para o github.
 Apresentar um link que leva a uma seção dos créditos de desenvolvimento da página. 
 
 ### Celular (Seção: Temporadas)
-Desktop (largura menores de 500px)
+* Altura menores de:
+* Largura menores de:
 
 ![Versão Celular, Seção Temporadas](./tripulacao%20-%20celular.png)
 
-### Celular (Seção: Temporadas)
-Tablet
+#### Header 
+* Cor do background: #D35400
+
+##### Logo e Menu Dropdown
+O logotipo da página web "One Piece" está localizado no canto superior esquerdo da página. O logotipo é composto pelo personagem principal segurando o chapeu com o texto "One Piece" embaixo. O logo funciona como interatividade com o menu, ao ser clicado o menu de navegação é exibido. 
+
+###### Elementos Modificados : Créditos 
+Excluisivamente nessas resoluções de tela, o link para seção de Créditos foi movida da parte do Footer, para a exterminidade direita do Header. 
+
+#### Main
+* Cor do background: #8EC5FC
+* Cor da fonte (paragrafo): #F7F8B4
+
+
+##### Seção Tripulação: 
+A seção Tripulação apresenta um carrosel com imagem dos dez tripulantes, quando interagido com uma das imagens, um texto expansivo é exibido com uma descrição breve do tripulante e sua foto em destaque. 
+
+#### Footer
+* Cor do background: #D35400
+* Cor da fonte: #1AC6C8
+
+##### Direitos autorais
+Inclui informações sobre o autor da obra.
+##### Github: 
+Apresentar o nickname do github com link para o github. 
+
+### Tablet (Seção: Tablet)
+* Altura entre:
+* Largura entre:
 
 ![Versão Tablet, Seção Inicio](./inicio%20-%20tablet.png)
 
