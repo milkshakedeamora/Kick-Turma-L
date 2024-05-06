@@ -55,6 +55,13 @@ Apresentar o nickname do github com link para o github.
 ##### Créditos
 Apresentar um link que leva a uma seção dos créditos de desenvolvimento da página. 
 
+### Celular (Seção: Temporadas)
+Desktop (largura menores de 500px)
+
+![Versão Celular, Seção Temporadas](./tripulacao%20-%20celular.png)
+
+
+
 
 ## Créditos
 ### Imagens
