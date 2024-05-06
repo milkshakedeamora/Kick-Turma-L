@@ -7,21 +7,27 @@ Desenvolvimento de uma página para o desafio da Kick. Página inspirada em One 
 * Main (paragrafo): Singly Linked
 * Main (Titulo): One Piece
 * Footer : Catchy Melody
-## Cartela de Cores
+## Paleta de Cores
 
-## Desktop (Seção: Temporadas)
-![Versão Desktop, Seção Temporadas](./temporada%20-%20desktop.png)
-A versão para desktop (largura maior de 1400px e altura maior de 1000px)
-#### Paleta de Cores 
-![Paleta Desktop](./Paleta%20de%20Cores-%20Desktop.jpeg)
+
 ### Header
+![Paleta Desktop](./Paleta%20de%20Cores-%20Desktop.jpeg)
+## Telas X Seções
+### Desktop (Seção: Temporadas)
+Desktop (largura maior de 1400px e altura maior de 1000px)
+
+![Versão Desktop, Seção Temporadas](./temporada%20-%20desktop.png)
+
+
+
+#### Header
 * Cor do background: #FF6347
 * Cor da fonte: #F7D35E
 
-#### Logotipo
+##### Logotipo
 O logotipo da página web "One Piece" está localizado no canto superior esquerdo da página. O logotipo é composto por uma âncora estilizada e o nome "One Piece" em letras maiúsculas.
 
-#### Menu de navegação
+##### Menu de navegação
 O menu de navegação está localizado na parte superior da página, ao lado direito logotipo. 
 
 O menu de navegação inclui as seguintes opções:
@@ -30,24 +36,26 @@ O menu de navegação inclui as seguintes opções:
 * Tripulação: Essa opção leva à página da tripulação, onde os membros da tripulação do navio são apresentados.
 * Acessar: Essa opção leva à página de login, onde os usuários podem se conectar à sua conta ou criar uma nova.
 
-### Main
+#### Main
 * Cor do background: #FF6347
 * Cor da fonte (paragrafo): #F7D35E
 * Cor da fonte (Titulo) : #F7D35E
 
-#### Seção Temporadas: 
+##### Seção Temporadas: 
 A seção temporadas apresenta uma lista das temporadas, que quando passado o mouse apresenta um breve resumo. 
 
-### Footer
+#### Footer
 * Cor do background: #FF6347
 * Cor da fonte: #F7D35E
 
-#### Direitos autorais
+##### Direitos autorais
  Inclui informações sobre o autor da obra.
-#### Github: 
+##### Github: 
 Apresentar o nickname do github com link para o github. 
-#### Créditos
+##### Créditos
 Apresentar um link que leva a uma seção dos créditos de desenvolvimento da página. 
+
+
 ## Créditos
 ### Imagens
 
