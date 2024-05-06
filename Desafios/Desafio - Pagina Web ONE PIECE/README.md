@@ -117,7 +117,7 @@ Inclui informações sobre o autor da obra.
 ##### Github: 
 Apresentar o nickname do github com link para o github. 
 
-### Tablet (Seção: Tablet)
+### Tablet (Seção: Inicio / Acessar)
 * Altura entre:
 * Largura entre:
 
@@ -150,6 +150,10 @@ Nas outras seções a parte inferior esquerda possui o protagonista da série, m
 #### Footer
 * Cor do background: #9C27B0
 * Cor da fonte: #C0F0AC
+
+#### Seção Acessar
+![Acessar](./card%20acessar.png)
+Simula uma página de login, com um titulo com "Entre para tripulação", seguido de um subtitulo com "Ainda não faz parte da tripulação? aliste-se.", logo após um campo de texto para apelido pirata e um campo de senha para código pirata, logo após dois botões alinhados com o texto "Zarpando!" e "Esqueceu algo?".
 
 ##### Direitos autorais
  Inclui informações sobre o autor da obra.
