@@ -21,7 +21,12 @@ Página inspirada em One Piece, com algumas informações sobre as temporadas e 
 * Header e Footer : 2,03 : 1 :x:
 * Main : 7,55 : 1 /  10,98 : 1 :white_check_mark:
 ##### Daltonismo  :white_check_mark:
+
+<div align="center">
+ 
 ![Desktop](./daltonismo%20-%20desktop.png)
+
+</div>
 
 ### Celular
 ![Paleta Celular](./Paleta%20de%20Cores-%20Celular.jpeg)
@@ -30,7 +35,11 @@ Página inspirada em One Piece, com algumas informações sobre as temporadas e 
 * Header e Footer : 1,98 : 1 :x:
 * Main : 1,65 : 1 :x:
 ##### Daltonismo :white_check_mark:
+<div align="center">
+ 
 ![Celular](./daltonismo%20-%20celular.png)
+
+</div>
 
 ### Tablet
 ![Paleta Tablet](./Paleta%20de%20Cores-%20Tablet.jpeg)
@@ -39,16 +48,22 @@ Página inspirada em One Piece, com algumas informações sobre as temporadas e 
 * Header e Footer : 4,5 : 1 :white_check_mark:
 * Main : 3,15 : 1 :x:
 ##### Daltonismo :white_check_mark:
+<div align="center">
+ 
 ![Tablet](./daltonismo%20-%20tablet.png)
+
+</div>
 
 ## Telas X Seções
 ### Desktop (Seção: Temporadas)
 * Altura maiores de:
 * Largura maiores de:
 
+<div align="center">
+ 
 ![Versão Desktop, Seção Temporadas](./temporada%20-%20desktop.png)
 
-
+</div>
 
 #### Header
 * Cor do background: #FF6347
@@ -89,7 +104,11 @@ Apresentar um link que leva a uma seção dos créditos de desenvolvimento da p�
 * Altura menores de:
 * Largura menores de:
 
+<div align="center">
+ 
 ![Versão Celular, Seção Temporadas](./tripulacao%20-%20celular.png)
+
+</div>
 
 #### Header 
 * Cor do background: #D35400
@@ -121,7 +140,11 @@ Apresentar o nickname do github com link para o github.
 * Altura entre:
 * Largura entre:
 
+<div align="center">
+ 
 ![Versão Tablet, Seção Inicio](./inicio%20-%20tablet.png)
+
+</div>
 
 #### Header
 * Cor do background: #9C27B0
@@ -152,7 +175,13 @@ Nas outras seções a parte inferior esquerda possui o protagonista da série, m
 * Cor da fonte: #C0F0AC
 
 #### Seção Acessar
+
+<div align="center">
+ 
 ![Acessar](./card%20acessar.png)
+
+</div>
+ 
 Simula uma página de login, com um titulo com "Entre para tripulação", seguido de um subtitulo com "Ainda não faz parte da tripulação? aliste-se.", logo após um campo de texto para apelido pirata e um campo de senha para código pirata, logo após dois botões alinhados com o texto "Zarpando!" e "Esqueceu algo?".
 
 ##### Direitos autorais
