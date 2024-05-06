@@ -1,7 +1,10 @@
 
 # One Piece 
-[Figma](https://www.figma.com/proto/ytX4njFg3XFn8aTaysJjub/OnePiece---Desafio-Kick?type=design&node-id=1-2&t=9daVXeCSOVaIRdmC-0&scaling=scale-down&page-id=0%3A1)
+
 Página inspirada em One Piece, com algumas informações sobre as temporadas e os personagens principais. 
+
+##   [Figma](https://www.figma.com/proto/ytX4njFg3XFn8aTaysJjub/OnePiece---Desafio-Kick?type=design&node-id=1-2&t=9daVXeCSOVaIRdmC-0&scaling=scale-down&page-id=0%3A1)
+
  ## Fontes 
 * Header : One Piece
 * Main (paragrafo): Singly Linked
