@@ -1,11 +1,13 @@
 
-# One Piece
+# One Piece 
+[Figma](https://www.figma.com/proto/ytX4njFg3XFn8aTaysJjub/OnePiece---Desafio-Kick?type=design&node-id=1-2&t=9daVXeCSOVaIRdmC-0&scaling=scale-down&page-id=0%3A1)
 Página inspirada em One Piece, com algumas informações sobre as temporadas e os personagens principais. 
  ## Fontes 
 * Header : One Piece
 * Main (paragrafo): Singly Linked
 * Main (Titulo): One Piece
 * Footer : Catchy Melody
+
 ## Paleta de Cores
 
 
@@ -90,7 +92,7 @@ Apresentar um link que leva a uma seção dos créditos de desenvolvimento da p�
 * Cor do background: #D35400
 
 ##### Logo e Menu Dropdown
-O logotipo da página web "One Piece" está localizado no canto superior esquerdo da página. O logotipo é composto pelo personagem principal segurando o chapeu com o texto "One Piece" embaixo. O logo funciona como interatividade com o menu, ao ser clicado o menu de navegação é exibido. 
+O logotipo da página web "One Piece" está localizado no canto superior esquerdo da página. O logotipo é composto pelo personagem principal segurando o chapeu com o texto "One Piece" embaixo. O logotipo funciona como interatividade com o menu, ao ser clicado o menu de navegação é exibido. 
 
 ###### Elementos Modificados : Créditos 
 Excluisivamente nessas resoluções de tela, o link para seção de Créditos foi movida da parte do Footer, para a exterminidade direita do Header. 
@@ -117,6 +119,41 @@ Apresentar o nickname do github com link para o github.
 * Largura entre:
 
 ![Versão Tablet, Seção Inicio](./inicio%20-%20tablet.png)
+
+#### Header
+* Cor do background: #9C27B0
+* Cor da fonte: #C0F0AC
+
+##### Logotipo
+O logotipo da página web "One Piece" está localizado no canto superior esquerdo da página. O logotipo é composto pelo personagem principal segurando o chapeu com o texto "One Piece" embaixo.
+
+
+##### Menu de navegação
+O menu de navegação está localizado na parte superior da página, ao lado direito logotipo. 
+
+O menu de navegação inclui as seguintes opções:
+* Inicio: Que leva a sessão inicial da página.
+* Temporadas: Essa opção abre uma lista com as temporadas.
+* Tripulação: Essa opção leva à página da tripulação, onde os membros da tripulação do navio são apresentados.
+* Acessar: Essa opção leva à página de login, onde os usuários podem se conectar à sua conta ou criar uma nova.
+
+#### Main
+* Cor do background: #C0F0AC
+* Cor da fonte (paragrafo): #EB4034
+##### Seção Início: 
+A seção Inicio apresenta o titulo "One Piece" na lateral esquerda, com uma breve descrição sobre a tripulação a esquerda, com icones de alguns dos tripulantes .  
+###### Elementos Modificados : Imagem 
+Nas outras seções a parte inferior esquerda possui o protagonista da série, mas a seção Inicio possui uma imagem com todos os tripulantes. 
+#### Footer
+* Cor do background: #9C27B0
+* Cor da fonte: #C0F0AC
+
+##### Direitos autorais
+ Inclui informações sobre o autor da obra.
+##### Github: 
+Apresentar o nickname do github com link para o github. 
+##### Créditos
+Apresentar um link que leva a uma seção dos créditos de desenvolvimento da página. 
 
 
 ## Créditos
