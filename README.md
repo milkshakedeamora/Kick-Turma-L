@@ -1,6 +1,6 @@
 # Atividades Desenvolvidas durante o curso da Kick
 
-| Paradas (Aulas) | Atividade (Desafio)|  Skills Técnicas| Projeto |ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|
+| Paradas (Aulas) | Atividade (Desafio)|  Skills Técnicas| Projeto |ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|
 | :----------- | --- | :-------------: | :-------------: | :-----------: | 
 | #0304  | Criar calculadora com as 4 operações: soma, subtração, multiplicação e divisão. Além disso, deve conter um menu de seleção de opções com uma opção de sair, ao fim de cada operação o usuário deverá escolher se irá sair da calculadora ou voltar ao menu.  | Portugol  | [Calculadora](https://github.com/milkshakedeamora/Kick-Turma-L/tree/main/Desafios/Desafio%20Parada0304%20-%20Calculadora(Portugol))| ★ ★ ★ ★ ★|
 | #0506  | Criar uma página adicional para a página desenvolvida em aula, contendo um menu e deve ser possível navegar entre e a página inicial utilizando o menu. A página deve conter no mínimo:  1 `<h1> ` ,2 `<p>`, 1 `<img> ` |HTML, CSS  |  [Redes Sociais](https://github.com/milkshakedeamora/Kick-Turma-L/tree/main/Desafios/Desafio%20Para0506%20-/Desafio)| ★ ★ ★ ★ ★| 
