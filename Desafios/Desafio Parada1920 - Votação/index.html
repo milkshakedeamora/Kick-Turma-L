@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+    <style>
+        main {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width: 95vw;
+            height: 95vh;
+        }
+
+        .rgb {
+            width: 40px;
+        }
+
+        input {
+            border: 0;
+            background-color: #0000000a;
+        }
+
+        .button {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="crie-votacao">
+            <h1>Crie seu formulário de Votação</h1>
+            <form id="form-criado">
+                <label>Titulo do Formulário:</label>
+                <input type="text" name="nome-form" id="nome-form" required><br>
+                <label>Escolha de opção:</label><br>
+                <input type="radio" name="escolha" value="radio" required>
+                <label>Opção Única</label><br>
+                <input type="radio" name="escolha" value="checkbox" required>
+                <label>Opção(s) Múltipla(s)</label><br>
+                <label>Opções:</label><br>
+                <input type="text" name="op1" placeholder="Opção 1" required><br>
+                <input type="text" name="op2" placeholder="Opção 2"><br>
+                <input type="text" name="op3" placeholder="Opção 3"><br>
+                <input type="text" name="op4" placeholder="Opção 4"><br>
+                <label>Escolha a cor de fundo:</label><br>
+                <input type="radio" name="color-option" value="hex" onclick="escolhaCor('hex')" required>
+                <label>Hex:#</label>
+                <input type="text" name="color-hex" id="color-hex" value="c8a2c8" maxlength="7" disabled> <br>
+                <input type="radio" name="color-option" value="rgb" onclick="escolhaCor('rgb')" required>
+                <label>RGB:</label>
+                <input class="rgb" type="text" name="R" placeholder="R" maxlength="3" disabled>
+                <input class="rgb" type="text" name="G" placeholder="G" maxlength="3" disabled>
+                <input class="rgb" type="text" name="B" placeholder="B" maxlength="3" disabled><br>
+                <input type="radio" name="color-option" value="value" onclick="escolhaCor('value')" required>
+                <label>Valor:</label>
+                <input type="text" name="color-value" id="color-value" placeholder="gray" disabled><br>
+                <label>Escolha a cor do texto:</label><br>
+                <input type="radio" name="cor" value="black" required>
+                <label>Preto</label>
+                <input type="radio" name="cor" value="white" required>
+                <label>Branco</label><br>
+                <input type="button" value="Criar Formulário" id="criar-formulario">
+            </form>
+        </div>
+        <div class="formulario-votacao">
+        </div>
+    </main>
+</body>
+
+<script>
+    let votos = [];
+    let opcoes = [];
+
+    function novoForm() {
+        const info = new FormData(document.getElementById('form-criado'));
+        votos = [0, 0, 0, 0, 0];
+        opcoes = [`${info.get('op1')}`, `${info.get('op2')}`, `${info.get('op3')}`, `${info.get('op4')}`, 'Nulo/Branco'];
+
+        const newForm = document.createElement('form');
+        newForm.innerHTML = `<label>${info.get('nome-form')}</label><br>
+    <input type="${info.get('escolha')}" name="opcao" value="0">
+    <label>${info.get('op1')}</label><br>
+    <input type="${info.get('escolha')}" name="opcao" value="1">
+    <label>${info.get('op2')}</label><br>
+    <input type="${info.get('escolha')}" name="opcao" value="2">
+    <label>${info.get('op3')}</label><br>
+    <input type="${info.get('escolha')}" name="opcao" value="3">
+    <label>${info.get('op4')}</label><br>`;
+
+        if (info.get('escolha') === "radio") {
+            newForm.innerHTML += `<input type="radio" name="opcao" value="4">
+                              <label>Nulo</label><br>`;
+        }
+        newForm.innerHTML += `<input class="button" type="button" value="Votar" id="votar" onclick="ar()">
+                          <input class="button" type="button" value="Ver Votos" id="votos" onclick="exibirVotos()"> <br>
+                          <input class="button" type="button" value="Finalizar" id="finalizar" onclick="FinalizarVotos()">`;
+
+        let bgColor = '';
+        const colorOption = document.querySelector('input[name="color-option"]:checked').value;
+        if (colorOption === 'hex') {
+            bgColor = `#${info.get('color-hex')}`;
+        } else if (colorOption === 'rgb') {
+            bgColor = `rgb(${info.get('R')}, ${info.get('G')}, ${info.get('B')})`;
+        } else if (colorOption === 'value') {
+            bgColor = info.get('color-value');
+        }
+
+        const formularioVotacao = document.querySelector('.formulario-votacao');
+        formularioVotacao.appendChild(newForm);
+        formularioVotacao.style.backgroundColor = bgColor;
+        formularioVotacao.style.color = document.querySelector('input[name="cor"]:checked').value;
+        formularioVotacao.style.fontSize = '30px';
+
+        document.querySelector('.crie-votacao').style.display = 'none';
+    }
+
+    function ar() {
+        const selectedOptions = document.querySelectorAll('.formulario-votacao form input[name="opcao"]:checked');
+
+        const votosRegistrados = [];
+        if (document.querySelector('input[name="escolha"]:checked').value === 'radio') {
+            if (selectedOptions.length === 0) {
+                alert('Por favor, selecione uma opção antes de votar.');
+                return;
+            }
+
+            votos[selectedOptions[0].value]++;
+            votosRegistrados.push(opcoes[selectedOptions[0].value]);
+        } else {
+            if (selectedOptions.length === 0) {
+                votos[4]++;
+                votosRegistrados.push(opcoes[4]);
+            } else {
+                selectedOptions.forEach(option => {
+                    votos[option.value]++;
+                    votosRegistrados.push(opcoes[option.value]);
+                });
+            }
+        }
+
+        document.querySelectorAll('.formulario-votacao form input[name="opcao"]').forEach(option => {
+            option.checked = false;
+        });
+
+        alert(`Voto registrado!\nVocê votou em: ${votosRegistrados.join(', ')}`);
+    }
+
+    function exibirVotos() {
+        let resultado = 'Votos:\n';
+        opcoes.forEach((op, index) => {
+            resultado += `${op}: ${votos[index]}\n`;
+        });
+
+        alert(resultado);
+    }
+
+    function FinalizarVotos() {
+    alert("Finalizado.");
+    let max = 1;
+    let vencedores = [];
+    votos.forEach(function (voto, index) {
+        if (voto > max) {
+            max = voto;
+            vencedores.length = 0; 
+            vencedores.push(opcoes[index]);
+        } else if (voto === max) {
+            vencedores.push(opcoes[index]);
+        }
+    });
+    switch (vencedores.length) {
+        case 0:
+            document.querySelector('.formulario-votacao').innerHTML = '<h1>Não houve votos.</h1>';
+            break;
+        case 1:
+            document.querySelector('.formulario-votacao').innerHTML = `<h1>${vencedores[0]} ganhou.</h1>`;
+            break;
+        default:
+            document.querySelector('.formulario-votacao').innerHTML = `<h1>Empate entre:<br> ${vencedores.join(', ')} </h1>`;
+            break;
+    }
+   
+}
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('criar-formulario').addEventListener('click', novoForm);
+    });
+
+    function escolhaCor(opcao) {
+        if (opcao === 'hex') {
+            document.getElementById('color-hex').disabled = false;
+            document.querySelector('[name^="R"]').disabled = true;
+            document.querySelector('[name^="G"]').disabled = true;
+            document.querySelector('[name^="B"]').disabled = true;
+            document.getElementById('color-value').disabled = true;
+        } else if (opcao === 'rgb') {
+            document.getElementById('color-hex').disabled = true;
+            document.querySelector('[name^="R"]').disabled = false;
+            document.querySelector('[name^="G"]').disabled = false;
+            document.querySelector('[name^="B"]').disabled = false;
+            document.getElementById('color-value').disabled = true;
+        } else if (opcao === 'value') {
+            document.getElementById('color-hex').disabled = true;
+            document.querySelector('[name^="R"]').disabled = true;
+            document.querySelector('[name^="G"]').disabled = true;
+            document.querySelector('[name^="B"]').disabled = true;
+            document.getElementById('color-value').disabled = false;
+        }
+    }
+</script>
+
+</html>
