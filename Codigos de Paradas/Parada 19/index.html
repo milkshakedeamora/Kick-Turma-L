@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 95vw;
+        height: 95vh;
+    }
+</style>
+
+<body id="color">
+    <h1>Votação</h1>
+    <form id="meuFormulario">
+        <label for="">Escolha seu time</label><br>
+        <input type="radio" id="front" name="time" value="time1">
+        <label for="time1">Time 1</label><br>
+        <input type="radio" id="back" name="time" value="time2">
+        <label for="time2">Time 2</label><br>
+        <input type="radio" id="time3" name="time" value="time3">
+        <label for="time3">Time 3</label><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h1>Escolha seus dois números para comparação</h1>
+    <form id="meuFormulario2">
+        <label for="numero1">Número 1</label>
+        <input type="text" name="numero" id="numero1Input">
+        <label for="numero2">Número 2</label>
+        <input type="text" name="numero" id="numero2Input">
+        <input type="submit" value="Enviar">
+    </form>
+    <h1>Vefique se é impar ou par</h1>
+    <form id="meuFormulario3">
+        <label for="numero1">Número</label>
+        <input type="text" name="numero" id="numero1">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+        const formulario2 = document.getElementById('meuFormulario2');
+        const formulario3 = document.getElementById('meuFormulario3');
+
+        formulario3.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const numero = parseFloat(document.getElementById('numero1').value);  
+                  
+
+            
+            switch (true) {
+                case numero % 2 == 0:
+                    alert(numero + " é par!");
+                    break;
+                default:
+                alert(numero + " é impar!");
+            }
+        });
+
+        formulario2.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const numero1 = parseFloat(document.getElementById('numero1Input').value);
+            const numero2 = parseFloat(document.getElementById('numero2Input').value);
+
+            
+            switch (true) {
+                case numero1 > numero2:
+                    alert(numero1 + " é maior que " + numero2 + "!");
+                    break;
+                case numero1 < numero2:
+                    alert(numero2 + " é maior que " + numero1 + "!");
+                    break;
+                default:
+                    alert("São iguais.");
+            }
+        });
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const selectedTime = document.querySelector('input[name="time"]:checked').value;
+
+            switch (selectedTime) {
+                case 'time1':
+                    alert("Você escolheu o Time 1!");
+                    break;
+                case 'time2':
+                    alert("Você escolheu o Time 2!");
+                    break;
+                case 'time3':
+                    alert("Você escolheu o Time 3!");
+                    break;
+                default:
+                    alert("Nenhum time selecionado.");
+            }
+        });
+    </script>
+</body>
+
+</html>

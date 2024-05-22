@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Alunos</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+  .informacoes {
+    display: none;
+  }
+</style>
+<body>
+  <h1>Cadastro de Alunos</h1>
+  <form id="meuFormulario">
+    <label for="Nome">Nome</label>
+    <input type="text" name="Nome" id="nomeInput">
+    <label for="Telefone">Telefone</label>
+    <input type="tel" name="Telefone" id="telefoneInput">
+    <label for="email">Email</label>
+    <input type="email" name="Email" id="emailInput">
+    <label for="">Cursos</label><br>
+    <input type="checkbox" id="front" name="curso" value="Frontend">
+    <label for="front">Frontend</label><br>
+    <input type="checkbox" id="back" name="curso" value="Backend">
+    <label for="back">Backend</label><br>
+    <input type="checkbox" id="mobile" name="curso" value="Mobile">
+    <label for="mobile">Mobile</label><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+  <div class="informacoes">
+    <p id="nomeInfo"></p>
+    <p id="telefoneInfo"></p>
+    <p id="emailInfo"></p>
+    <p id="cursosInfo"></p>
+  </div>
+
+  <script>
+    const formulario = document.getElementById('meuFormulario');
+    const divInformacoes = document.querySelector('.informacoes');
+    const nomeInfo = document.getElementById('nomeInfo');
+    const nomeInput = document.getElementById('nomeInput');
+    const telefoneInfo = document.getElementById('telefoneInfo');
+    const telefoneInput = document.getElementById('telefoneInput');
+    const emailInfo = document.getElementById('emailInfo');
+    const emailInput = document.getElementById('emailInput');
+    const cursosInfo = document.getElementById('cursosInfo');
+
+    formulario.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const nome = nomeInput.value;
+      nomeInfo.textContent = `Nome: ${nome}`;
+      const tel = telefoneInput.value;
+      telefoneInfo.textContent = `Telefone: ${tel}`;
+      const email = emailInput.value;
+      emailInfo.textContent = `Email: ${email}`;
+      const checkedCursos = document.querySelectorAll('input[name="curso"]:checked');
+      if (checkedCursos.length === 0) {
+        cursosInfo.textContent = 'Nenhum curso selecionado.';
+      } else {
+        let cursos = '';
+        for (const curso of checkedCursos) {
+          cursos += curso.value + '  ';
+        }
+        
+
+        cursosInfo.textContent = `Curso(s): ${cursos}`;
+      }
+
+      divInformacoes.classList.remove('informacoes');
+      formulario.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

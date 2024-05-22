@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formTab">
+        <label>Numero:</label>
+        <input type="text" name="numero" id="numero">
+        <input type="button" value="Tabuada" id="tabuada">
+    </form>
+    <form id="formImp">
+        <label >Numeros entre:</label>
+        <input type="text" name="numero1" id="numero1">
+        <label for="numero2">e</label>
+        <input type="text" name="numero2" id="numero2">
+        <input type="button" value="Impares" id="impares">
+    </form>
+
+    <form id="formlogin">
+        <label >Senha:</label>
+        <input type="password" name="senha" id="senha">        
+        <input type="button" value="Login" id="btlogin">
+    </form>
+   
+</body>
+<script>
+    function criarTabuada() {
+        let n = parseInt(new FormData(document.getElementById('formTab')).get('numero')); 
+        document.body.innerHTML = `<h1> Tabuada ${n} </h1>`;
+        for (let i = 0; i <= 10; i++) {
+            document.body.innerHTML += `<h1> ${n} x ${i} = ${n * i} </h1>`;
+        }
+    }
+
+    function criarImpares() {
+        let n1 = parseInt(new FormData(document.getElementById('formImp')).get('numero1'));
+        let n2 = parseInt(new FormData(document.getElementById('formImp')).get('numero2'));
+        if(n1 > n2){
+            n1 = 0;
+        }
+        if (n1 % 2 === 0) {
+            n1++;  
+        }
+       
+        
+        document.body.innerHTML = `<h1> Impares entre ${n1} e ${n2}: </h1>`;
+        for (let i = n1; i <= n2; i += 2) {
+            document.body.innerHTML += `${i} `;
+        }
+    }
+    function login(){
+        let senhaUs = new FormData(document.getElementById('formlogin')).get('senha'); 
+        senha = "amora";
+        while(senhaUs !== senha){
+            senhaUs = prompt("Senha errada. Digite Novamente.");
+        }
+        alert("Logado.")
+    }
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('tabuada').addEventListener('click', criarTabuada);
+        document.getElementById('impares').addEventListener('click', criarImpares);
+        document.getElementById('btlogin').addEventListener('click', login);
+    });
+</script>
+</html>
