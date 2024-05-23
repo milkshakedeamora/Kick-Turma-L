@@ -6,11 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votação</title>
     <style>
-        main {
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .mudarCor {
+            background-color: blueviolet;
+            border-radius: 30px;
+            height: 99%;
+        }
+
+        .votacao, .botoes, .opcoes, .mudarCor {
             display: flex;
+            gap: 20px;
             align-items: center;
             align-content: center;
             justify-content: center;
+            padding: 15px;
+        }
+
+        .votacao {
+            flex-direction: column;
+        }
+
+        main {
+            flex-direction: row;
+            display: flex;
             width: 95vw;
             height: 95vh;
         }
@@ -19,12 +42,7 @@
             width: 40px;
         }
 
-        input {
-            border: 0;
-            background-color: #0000000a;
-        }
-
-        .button {
+        * {
             color: inherit;
         }
     </style>
@@ -32,21 +50,8 @@
 
 <body>
     <main>
-        <div class="crie-votacao">
-            <h1>Crie seu formulário de Votação</h1>
-            <form id="form-criado">
-                <label>Titulo do Formulário:</label>
-                <input type="text" name="nome-form" id="nome-form" required><br>
-                <label>Escolha de opção:</label><br>
-                <input type="radio" name="escolha" value="radio" required>
-                <label>Opção Única</label><br>
-                <input type="radio" name="escolha" value="checkbox" required>
-                <label>Opção(s) Múltipla(s)</label><br>
-                <label>Opções:</label><br>
-                <input type="text" name="op1" placeholder="Opção 1" required><br>
-                <input type="text" name="op2" placeholder="Opção 2"><br>
-                <input type="text" name="op3" placeholder="Opção 3"><br>
-                <input type="text" name="op4" placeholder="Opção 4"><br>
+        <div class="mudarCor">            
+            <form id="form-mudar-cor">                
                 <label>Escolha a cor de fundo:</label><br>
                 <input type="radio" name="color-option" value="hex" onclick="escolhaCor('hex')" required>
                 <label>Hex:#</label>
@@ -64,103 +69,77 @@
                 <label>Preto</label>
                 <input type="radio" name="cor" value="white" required>
                 <label>Branco</label><br>
-                <input type="button" value="Criar Formulário" id="criar-formulario">
+                <input type="button" value="Mudar Cor" id="mudarCorButton" onclick="mudarCor()">
             </form>
         </div>
-        <div class="formulario-votacao">
+        <div class="votacao">
+            <h1>Vote no melhor Super Heroi</h1>
+            <form id="formulario-votacao">
+                <div class="opcoes">
+                    <input type="checkbox" name="opcao" value="0" id="Batman">
+                    <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2023/08/21/1000x1000/1_o_batman_easy_resize_com_-29069579.jpg?20230821092600?20230821092600" alt="Batman">
+                    <input type="checkbox" name="opcao" value="1" id="Deadpool">
+                    <img src="https://www.otempo.com.br/content/dam/otempo/editorias/entretenimento/filmes-e-series/2023/7/entretenimento-poder-do-deadpool-tem-uma-utilidade-que-ninguem-esperava-1708767662.jpeg" alt="Deadpool">
+                    <input type="checkbox" name="opcao" value="2" id="Homem Aranha">
+                    <img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/homem-aranha-atraves-do-aranhaverso.jpg" alt="HomemAranha">
+                    <input type="checkbox" name="opcao" value="3" id="Flash">
+                    <img src="https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2023/02/13/1235995292-the-flash.jpg" alt="Flash">
+                </div>
+                <div class="botoes">
+                    <input class="button" type="button" value="Votar" id="votar" onclick="ar()">
+                    <input class="button" type="button" value="Finalizar" id="finalizar" onclick="FinalizarVotos()">
+                </div>
+            </form>
         </div>
     </main>
 </body>
 
 <script>
-    let votos = [];
-    let opcoes = [];
+    let votos = [0, 0, 0, 0, 0, 0];
+    let opcoes = ['Batman', 'Deadpool', 'Homem Aranha', 'Flash', 'Nulo', 'Branco'];
 
-    function novoForm() {
-        const info = new FormData(document.getElementById('form-criado'));
-        votos = [0, 0, 0, 0, 0];
-        opcoes = [`${info.get('op1')}`, `${info.get('op2')}`, `${info.get('op3')}`, `${info.get('op4')}`, 'Nulo/Branco'];
-
-        const newForm = document.createElement('form');
-        newForm.innerHTML = `<label>${info.get('nome-form')}</label><br>
-    <input type="${info.get('escolha')}" name="opcao" value="0">
-    <label>${info.get('op1')}</label><br>
-    <input type="${info.get('escolha')}" name="opcao" value="1">
-    <label>${info.get('op2')}</label><br>
-    <input type="${info.get('escolha')}" name="opcao" value="2">
-    <label>${info.get('op3')}</label><br>
-    <input type="${info.get('escolha')}" name="opcao" value="3">
-    <label>${info.get('op4')}</label><br>`;
-
-        if (info.get('escolha') === "radio") {
-            newForm.innerHTML += `<input type="radio" name="opcao" value="4">
-                              <label>Nulo</label><br>`;
-        }
-        newForm.innerHTML += `<input class="button" type="button" value="Votar" id="votar" onclick="ar()">
-                          <input class="button" type="button" value="Ver Votos" id="votos" onclick="exibirVotos()"> <br>
-                          <input class="button" type="button" value="Finalizar" id="finalizar" onclick="FinalizarVotos()">`;
+    function mudarCor() {
+        const form = new FormData(document.getElementById('form-mudar-cor'));
 
         let bgColor = '';
-        const colorOption = document.querySelector('input[name="color-option"]:checked').value;
+        const colorOption = form.get('color-option');
         if (colorOption === 'hex') {
-            bgColor = `#${info.get('color-hex')}`;
+            bgColor = `#${form.get('color-hex')}`;
         } else if (colorOption === 'rgb') {
-            bgColor = `rgb(${info.get('R')}, ${info.get('G')}, ${info.get('B')})`;
+            bgColor = `rgb(${form.get('R')}, ${form.get('G')}, ${form.get('B')})`;
         } else if (colorOption === 'value') {
-            bgColor = info.get('color-value');
+            bgColor = form.get('color-value');
         }
 
-        const formularioVotacao = document.querySelector('.formulario-votacao');
-        formularioVotacao.appendChild(newForm);
-        formularioVotacao.style.backgroundColor = bgColor;
-        formularioVotacao.style.color = document.querySelector('input[name="cor"]:checked').value;
-        formularioVotacao.style.fontSize = '30px';
-
-        document.querySelector('.crie-votacao').style.display = 'none';
+        document.body.style.backgroundColor = bgColor;
+        document.body.style.color = form.get('cor');
     }
 
     function ar() {
-        const selectedOptions = document.querySelectorAll('.formulario-votacao form input[name="opcao"]:checked');
+    let opcoesSel = document.querySelectorAll('input[name="opcao"]:checked');
+    let opcao;
 
-        const votosRegistrados = [];
-        if (document.querySelector('input[name="escolha"]:checked').value === 'radio') {
-            if (selectedOptions.length === 0) {
-                alert('Por favor, selecione uma opção antes de votar.');
-                return;
-            }
-
-            votos[selectedOptions[0].value]++;
-            votosRegistrados.push(opcoes[selectedOptions[0].value]);
-        } else {
-            if (selectedOptions.length === 0) {
-                votos[4]++;
-                votosRegistrados.push(opcoes[4]);
-            } else {
-                selectedOptions.forEach(option => {
-                    votos[option.value]++;
-                    votosRegistrados.push(opcoes[option.value]);
-                });
-            }
-        }
-
-        document.querySelectorAll('.formulario-votacao form input[name="opcao"]').forEach(option => {
-            option.checked = false;
-        });
-
-        alert(`Voto registrado!\nVocê votou em: ${votosRegistrados.join(', ')}`);
+    if (opcoesSel.length === 0) {
+        opcao = 5; 
+    } else if (opcoesSel.length > 1) {
+        opcao = 4; 
+    } else {
+        opcao = parseInt(opcoesSel[0].value);
     }
+    votos[opcao]++;
 
-    function exibirVotos() {
-        let resultado = 'Votos:\n';
-        opcoes.forEach((op, index) => {
-            resultado += `${op}: ${votos[index]}\n`;
-        });
+    document.querySelectorAll('.votacao form input[name="opcao"]').forEach(opcao => {
+        opcao.checked = false;
+    });
 
-        alert(resultado);
-    }
+    alert(`Voto registrado!\nVocê votou em: ${opcoes[opcao]}`);
+}
+
 
     function FinalizarVotos() {
-    alert("Finalizado.");
+    let totalVotos = 0
+    for(voto in votos){ totalVotos+=voto};
+
     let max = 1;
     let vencedores = [];
     votos.forEach(function (voto, index) {
@@ -172,45 +151,44 @@
             vencedores.push(opcoes[index]);
         }
     });
+
+    let resultadoHTML = `<h1>Resultados:</h1><ul>`;
+    votos.forEach(function (voto, index) {
+        let porcentagem = ((voto / totalVotos) * 100).toFixed(2);
+        resultadoHTML += `<li>${opcoes[index]}: ${porcentagem}% (${voto} votos)</li>`;
+    });
+    resultadoHTML += `</ul>`;
+
     switch (vencedores.length) {
         case 0:
-            document.querySelector('.formulario-votacao').innerHTML = '<h1>Não houve votos.</h1>';
+            document.querySelector('.votacao').innerHTML = '<h1>Não houve votos.</h1>';
             break;
         case 1:
-            document.querySelector('.formulario-votacao').innerHTML = `<h1>${vencedores[0]} ganhou.</h1>`;
+            if (vencedores[0] === "Nulo" || vencedores[0] === "Branco") {
+                document.querySelector('.votacao').innerHTML = `<h1>Houve mais votos não válidos.</h1>${resultadoHTML}`;
+            } else {
+                document.querySelector('.votacao').innerHTML = `<h1>${vencedores[0]} ganhou.</h1>${resultadoHTML}`;
+            }
             break;
         default:
-            document.querySelector('.formulario-votacao').innerHTML = `<h1>Empate entre:<br> ${vencedores.join(', ')} </h1>`;
+            let VencedoresVal = vencedores.filter(valido => valido !== "Nulo" && v !== "Branco");
+            if (VencedoresVal.length === 1) {
+                document.querySelector('.votacao').innerHTML = `<h1>${VencedoresVal[0]} ganhou.</h1>${resultadoHTML}`;
+            } else {
+                document.querySelector('.votacao').innerHTML = `<h1>Empate entre:<br> ${VencedoresVal.join(', ')}</h1>${resultadoHTML}`;
+            }
             break;
     }
-   
+    alert("Finalizado.");
 }
 
 
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('criar-formulario').addEventListener('click', novoForm);
-    });
-
     function escolhaCor(opcao) {
-        if (opcao === 'hex') {
-            document.getElementById('color-hex').disabled = false;
-            document.querySelector('[name^="R"]').disabled = true;
-            document.querySelector('[name^="G"]').disabled = true;
-            document.querySelector('[name^="B"]').disabled = true;
-            document.getElementById('color-value').disabled = true;
-        } else if (opcao === 'rgb') {
-            document.getElementById('color-hex').disabled = true;
-            document.querySelector('[name^="R"]').disabled = false;
-            document.querySelector('[name^="G"]').disabled = false;
-            document.querySelector('[name^="B"]').disabled = false;
-            document.getElementById('color-value').disabled = true;
-        } else if (opcao === 'value') {
-            document.getElementById('color-hex').disabled = true;
-            document.querySelector('[name^="R"]').disabled = true;
-            document.querySelector('[name^="G"]').disabled = true;
-            document.querySelector('[name^="B"]').disabled = true;
-            document.getElementById('color-value').disabled = false;
-        }
+        document.getElementById('color-hex').disabled = opcao !== 'hex';
+        document.querySelector('[name="R"]').disabled = opcao !== 'rgb';
+        document.querySelector('[name="G"]').disabled = opcao !== 'rgb';
+        document.querySelector('[name="B"]').disabled = opcao !== 'rgb';
+        document.getElementById('color-value').disabled = opcao !== 'value';
     }
 </script>
 
