@@ -18,7 +18,10 @@
             height: 99%;
         }
 
-        .votacao, .botoes, .opcoes, .mudarCor {
+        .votacao,
+        .botoes,
+        .opcoes,
+        .mudarCor {
             display: flex;
             gap: 20px;
             align-items: center;
@@ -50,8 +53,8 @@
 
 <body>
     <main>
-        <div class="mudarCor">            
-            <form id="form-mudar-cor">                
+        <div class="mudarCor">
+            <form id="form-mudar-cor">
                 <label>Escolha a cor de fundo:</label><br>
                 <input type="radio" name="color-option" value="hex" onclick="escolhaCor('hex')" required>
                 <label>Hex:#</label>
@@ -77,13 +80,17 @@
             <form id="formulario-votacao">
                 <div class="opcoes">
                     <input type="checkbox" name="opcao" value="0" id="Batman">
-                    <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2023/08/21/1000x1000/1_o_batman_easy_resize_com_-29069579.jpg?20230821092600?20230821092600" alt="Batman">
+                    <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2023/08/21/1000x1000/1_o_batman_easy_resize_com_-29069579.jpg?20230821092600?20230821092600"
+                        alt="Batman">
                     <input type="checkbox" name="opcao" value="1" id="Deadpool">
-                    <img src="https://www.otempo.com.br/content/dam/otempo/editorias/entretenimento/filmes-e-series/2023/7/entretenimento-poder-do-deadpool-tem-uma-utilidade-que-ninguem-esperava-1708767662.jpeg" alt="Deadpool">
+                    <img src="https://www.otempo.com.br/content/dam/otempo/editorias/entretenimento/filmes-e-series/2023/7/entretenimento-poder-do-deadpool-tem-uma-utilidade-que-ninguem-esperava-1708767662.jpeg"
+                        alt="Deadpool">
                     <input type="checkbox" name="opcao" value="2" id="Homem Aranha">
-                    <img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/homem-aranha-atraves-do-aranhaverso.jpg" alt="HomemAranha">
+                    <img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/homem-aranha-atraves-do-aranhaverso.jpg"
+                        alt="HomemAranha">
                     <input type="checkbox" name="opcao" value="3" id="Flash">
-                    <img src="https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2023/02/13/1235995292-the-flash.jpg" alt="Flash">
+                    <img src="https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2023/02/13/1235995292-the-flash.jpg"
+                        alt="Flash">
                 </div>
                 <div class="botoes">
                     <input class="button" type="button" value="Votar" id="votar" onclick="ar()">
@@ -116,73 +123,76 @@
     }
 
     function ar() {
-    let opcoesSel = document.querySelectorAll('input[name="opcao"]:checked');
-    let opcao;
+        let opcoesSel = document.querySelectorAll('input[name="opcao"]:checked');
+        let opcao;
 
-    if (opcoesSel.length === 0) {
-        opcao = 5; 
-    } else if (opcoesSel.length > 1) {
-        opcao = 4; 
-    } else {
-        opcao = parseInt(opcoesSel[0].value);
+        if (opcoesSel.length === 0) {
+            opcao = 5;
+        } else if (opcoesSel.length > 1) {
+            opcao = 4;
+        } else {
+            opcao = parseInt(opcoesSel[0].value);
+        }
+        votos[opcao]++;
+
+        document.querySelectorAll('.votacao form input[name="opcao"]').forEach(opcao => {
+            opcao.checked = false;
+        });
+
+        alert(`Voto registrado!\nVocê votou em: ${opcoes[opcao]}`);
     }
-    votos[opcao]++;
-
-    document.querySelectorAll('.votacao form input[name="opcao"]').forEach(opcao => {
-        opcao.checked = false;
-    });
-
-    alert(`Voto registrado!\nVocê votou em: ${opcoes[opcao]}`);
-}
 
 
     function FinalizarVotos() {
-    let totalVotos = 0
-    for(voto in votos){ totalVotos+=voto};
+        let totalVotos = 0;
+        let max = -1; 
+        let vencedores = [];
 
-    let max = 1;
-    let vencedores = [];
-    votos.forEach(function (voto, index) {
-        if (voto > max) {
-            max = voto;
-            vencedores.length = 0; 
-            vencedores.push(opcoes[index]);
-        } else if (voto === max) {
-            vencedores.push(opcoes[index]);
+        for (let i = 0; i < votos.length; i++) {
+            totalVotos += votos[i];
+            if (votos[i] > max) {
+                max = votos[i];
+            }
         }
-    });
 
-    let resultadoHTML = `<h1>Resultados:</h1><ul>`;
-    votos.forEach(function (voto, index) {
-        let porcentagem = ((voto / totalVotos) * 100).toFixed(2);
-        resultadoHTML += `<li>${opcoes[index]}: ${porcentagem}% (${voto} votos)</li>`;
-    });
-    resultadoHTML += `</ul>`;
+        votos.forEach(function (voto, index) {
+            if (voto === max && max > 0) {
+                vencedores.push(opcoes[index]);
+            }
+        });
 
-    switch (vencedores.length) {
-        case 0:
-            document.querySelector('.votacao').innerHTML = '<h1>Não houve votos.</h1>';
-            break;
-        case 1:
-            if (vencedores[0] === "Nulo" || vencedores[0] === "Branco") {
-                document.querySelector('.votacao').innerHTML = `<h1>Houve mais votos não válidos.</h1>${resultadoHTML}`;
-            } else {
-                document.querySelector('.votacao').innerHTML = `<h1>${vencedores[0]} ganhou.</h1>${resultadoHTML}`;
-            }
-            break;
-        default:
-            let VencedoresVal = vencedores.filter(valido => valido !== "Nulo" && v !== "Branco");
-            if (VencedoresVal.length === 1) {
-                document.querySelector('.votacao').innerHTML = `<h1>${VencedoresVal[0]} ganhou.</h1>${resultadoHTML}`;
-            } else {
-                document.querySelector('.votacao').innerHTML = `<h1>Empate entre:<br> ${VencedoresVal.join(', ')}</h1>${resultadoHTML}`;
-            }
-            break;
+        let resultadoHTML = `<h1>Resultados:</h1><ul>`;
+        votos.forEach(function (voto, index) {
+            let porcentagem = totalVotos > 0 ? ((voto / totalVotos) * 100).toFixed(2) : 0;
+            resultadoHTML += `<li>${opcoes[index]}: ${porcentagem}% (${voto} votos)</li>`;
+        });
+        resultadoHTML += `</ul>`;
+
+        switch (vencedores.length) {
+            case 0:
+                document.querySelector('.votacao').innerHTML = '<h1>Não houve votos.</h1>';
+                break;
+            case 1:
+                if (vencedores[0] === "Nulo" || vencedores[0] === "Branco") {
+                    document.querySelector('.votacao').innerHTML = `<h1>Houve mais votos não válidos.</h1>${resultadoHTML}`;
+                } else {
+                    document.querySelector('.votacao').innerHTML = `<h1>${vencedores[0]} ganhou.</h1>${resultadoHTML}`;
+                }
+                break;
+            default:
+                let vencedoresValidos = vencedores.filter(valido => valido !== "Nulo" && valido !== "Branco");
+                if(vencedoresValidos.length === 0){
+                    document.querySelector('.votacao').innerHTML = `<h1>Houve mais votos não válidos.</h1>${resultadoHTML}`;
+                }
+                else if (vencedoresValidos.length === 1) {
+                    document.querySelector('.votacao').innerHTML = `<h1>${vencedoresValidos[0]} ganhou.</h1>${resultadoHTML}`;
+                } else {
+                    document.querySelector('.votacao').innerHTML = `<h1>Empate entre:<br> ${vencedoresValidos.join(', ')}</h1>${resultadoHTML}`;
+                }
+                break;
+        }
+        alert("Finalizado.");
     }
-    alert("Finalizado.");
-}
-
-
     function escolhaCor(opcao) {
         document.getElementById('color-hex').disabled = opcao !== 'hex';
         document.querySelector('[name="R"]').disabled = opcao !== 'rgb';

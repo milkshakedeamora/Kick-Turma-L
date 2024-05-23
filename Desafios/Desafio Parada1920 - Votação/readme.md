@@ -17,3 +17,10 @@ Um formulario é exibido solicitando o voto em um dos 4 herois.
 
 **Finalizar**: exibe o resultado da votação.
 
+_Se maior numero de votos forem nulos_: Será considerado maior valores nulos. 
+
+_Se empate entre nulos e um heroi_: Será considerado vitoria do heroi. 
+
+_Se empate entre  herois_: Será exibido o empate entre herois.
+
+
