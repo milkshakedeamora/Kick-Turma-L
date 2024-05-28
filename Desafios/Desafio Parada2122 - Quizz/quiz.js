@@ -19,7 +19,7 @@ function validarResposta(respostaCorreta) {
     criarPergunta();
 }
 
-function criarQuizz() {
+function criarQuiz() {
     totalPerguntas = parseInt(document.getElementById('qtperguntas').value);
     if (isNaN(totalPerguntas) || totalPerguntas < 1 || totalPerguntas > 15) {
         alert("Por favor, insira um número válido entre 1 e 15.");
