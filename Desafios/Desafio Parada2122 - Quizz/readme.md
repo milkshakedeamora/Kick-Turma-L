@@ -1,5 +1,5 @@
 # Parada 2122 - Quiz
-![](https://i.ibb.co/Jct7V1j/000.png)
+![](https://i.ibb.co/w7rgSpL/giig.gif)
 
 É solicitado o número de perguntas que você deseja responder, em seguida gerado o quiz, ficando com o background verde em caso de resposta correta e verde em caso de resposta incorreta e no final exibido sua pontuação. 
 
