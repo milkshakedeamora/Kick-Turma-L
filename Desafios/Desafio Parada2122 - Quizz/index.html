@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizz One Piece</title>
     <link rel="stylesheet" href="style.css">
-    <script src="quiz.js"></script>
+    <title>Quiz One Piece</title>
+
 </head>
+
 <body>
+    <script src="quiz.js"></script>
     <main>
-        <form >
-            <label for="qtperguntas">Escolha o número de perguntas (entre 1 a 15):</label>
-            <input type="text" name="qtperguntas" id="qtperguntas">
-            <input class="button" type="button" value="Criar" onclick="criarQuiz()">
+        <form>
+            <label for="qtperguntas">Escolha o número de perguntas:</label>
+            <span >1</span> <br>
+           <div>
+            <input type="range" name="qtperguntas" id="qtperguntas" min="1" max="15" value="1"
+            oninput="atualizarValor()"> <br>
+        <input class="button" type="button" value="Criar" onclick="criarQuiz()">
+           </div>
+
+
         </form>
     </main>
-    </body>
-</html>
+   
+</body>
 
+</html>

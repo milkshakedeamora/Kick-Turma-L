@@ -6,8 +6,36 @@ body {
     background: linear-gradient(0deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
     margin: 0;
 }
-main {    
+
+
+main {
     background: white;
     border-radius: 10px;
     padding: 20px;
+
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input[type=range] {
+    margin: 0.5em;
+    -webkit-appearance: none;
+    width: 18em;
+    height: 0.5em;
+    border-radius: 5px;
+    background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 23px;
+    height: 24px;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/034/217/966/small_2x/one-piece-luffy-with-rainbow-color-ai-generative-png.png');
+    background-size: contain;
 }

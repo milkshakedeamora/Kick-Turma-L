@@ -11,3 +11,5 @@
  * criarQuiz(): valida se foi escolhido um numero de respostas valido, cria o array de perguntas e inicia a função de gerar perguntas.
 
 * criarPergunta(): gera a pergunta atual e finaliza exibindo a pontuação caso chegue ao numero de perguntas escolhidas. 
+
+* atualizaValor(): atualiza o valor do span para exibir o numero de perguntas escolhidas de acordo com o range. 
