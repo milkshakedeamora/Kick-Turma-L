@@ -1,0 +1,148 @@
+/* style.css */
+
+/* Variáveis de Cor */
+:root {
+    /* Cores do Header e Footer */
+    --header-footer-bg-mobile: #D35400;
+    --header-footer-bg-tablet: #9C27B0;
+    --header-footer-bg-desktop: #FF6347;
+
+    /* Background Main */
+    --main-bg-mobile: #8EC5FC;
+    --main-bg-tablet: #C0F0AC;
+    --main-bg-desktop: #2C3E50;
+
+    /* Texto Header e Footer */
+    --header-footer-text-mobile: #1AC6C8;
+    --header-footer-text-tablet: #F7D35E;
+    --header-footer-text-desktop: #F7D35E;
+
+    /* Texto Main */
+    --main-text-mobile: #F7F8B4;
+    --main-text-tablet: #EB4034;
+    --main-text-desktop: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inicio{
+    display: flex;
+    padding: 0 10vw;
+    gap: 5vw;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    position: fixed;
+    height: 7.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-footer-bg-desktop);
+}
+footer{
+    align-items: flex-end;
+    
+}
+nav {
+    display: flex;
+    gap: 5px;
+}
+main{
+    height: 92vh;
+}
+section {
+    height: 85vh;
+    background-color: var(--main-bg-desktop); 
+    color: var(--main-text-desktop); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.temporadas, .seasons{
+    display: flex;
+    flex-direction: row;
+}
+.temporadas a {
+    background-color: #fff4ec4b;
+    border-radius: 30px;
+    height: 30px;
+    width: 150px;
+    text-align: center; 
+    margin: 5px;
+    text-decoration: none; 
+    
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+#luffy {
+    max-height: 60vh;
+    width: auto;
+}
+
+.footer,.informacoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+    
+}
+.footer{
+    width: 80%;
+    padding: 1%;
+}
+/* Media Queries para Responsividade */
+
+/*MOBILE*/
+@media (max-width: 600px) {
+    header, footer {
+        background-color: var(--header-footer-bg-mobile);
+        color: var(--header-footer-text-mobile);
+    }
+
+    section {
+        background-color: var(--main-bg-mobile);
+        color: var(--main-text-mobile);
+    }
+
+}
+/*TABLET*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    header, footer {
+        background-color: var(--header-footer-bg-tablet);
+        color: var(--header-footer-text-tablet);
+    }
+
+    section {
+        background-color: var(--main-bg-tablet);
+        color: var(--main-text-tablet);
+    }
+
+   
+}
+/*DESKTOP*/
+@media (min-width: 1025px) {
+    header, footer {
+        background-color: var(--header-footer-bg-desktop);
+        color: var(--header-footer-text-desktop);
+    }
+
+    section {
+        background-color: var(--main-bg-desktop);
+        color: var(--main-text-desktop);
+    }
+
+    
+}
