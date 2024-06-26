@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #4ddfcb;
+    
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    max-width: 80vw;
+    max-height: 600vh;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    text-align: center;
+   
+}
+
+.carousel-item img {
+   
+    width: auto;
+    max-height: 75%; 
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+
